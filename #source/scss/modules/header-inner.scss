@@ -63,10 +63,19 @@
         top: 0;
         left: 0;
         transform: unset;
+        &--top {
+            transform: translateY(0.5px);
+        }
         &--bottom {
             padding-top: 9px;
-            @media (max-width: 991px) {
+            @media (max-width: 1920px) {
+                padding-top: 7px;
+            }
+            @media (max-width: 1499px) {
                 padding-top: 5px;
+            }
+            @media (max-width: 991px) {
+                padding-top: 3px;
             }
         }
     }

@@ -88,3 +88,36 @@ window.addEventListener("keydown", function (evt) {
 		openMenuHandler(evt);
 	}
 });
+
+$(function(){
+    $scrollButton = $('#top-button');
+	$window = $(window);
+	$topOffset = 300;
+	$topOffsetMobile = 200;
+	$window.scroll(function(){
+        if ($(window).width() > 991) {
+            if ($window.scrollTop() > $topOffset){
+                $scrollButton.addClass('show');
+            } else {
+                $scrollButton.removeClass('show');
+            }
+        }
+        if ($(window).width() < 992) {
+            if ($window.scrollTop() > $topOffsetMobile){
+                $scrollButton.addClass('show');
+            } else {
+                $scrollButton.removeClass('show');
+            }
+        }
+	});
+    $scrollButton.on('click', (function(e) {
+        e.preventDefault(),
+        $('html, body').animate({
+            scrollTop: 0
+        },
+        {
+            duration: 0,
+            easing: "linear"
+        });
+    }));
+});
